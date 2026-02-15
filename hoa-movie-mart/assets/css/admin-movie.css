@@ -1,0 +1,45 @@
+/* Admin Movie Meta Box Styles */
+.hoa-meta-wrapper {
+    padding: 10px;
+}
+
+.hoa-form-row {
+    margin-bottom: 15px;
+}
+
+.hoa-form-row label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.hoa-download-repeater {
+    background: #f0f0f1;
+    border: 1px solid #ccd0d4;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.hoa-download-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    background: #fff;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    align-items: center;
+}
+
+.hoa-download-row input {
+    height: 30px;
+}
+
+.hoa-row-remove {
+    color: #a00;
+    cursor: pointer;
+}
+
+.hoa-row-remove:hover {
+    color: #dc3232;
+}

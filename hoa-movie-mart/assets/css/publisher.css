@@ -1,0 +1,109 @@
+.hoa-publisher-wrap {
+    max-width: 1200px;
+    margin: 20px auto;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.publisher-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #dcdcde;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.card h2, .card h3 {
+    margin-top: 0;
+    border-bottom: 1px solid #f0f0f1;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #1d2327;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+}
+
+.title-input {
+    font-size: 1.2em;
+    padding: 10px;
+    height: auto;
+}
+
+.meta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.poster-preview {
+    background: #f0f0f1;
+    width: 100%;
+    aspect-ratio: 2/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed #c3c4c7;
+    margin-bottom: 10px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.poster-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.download-row {
+    display: flex;
+    gap: 10px;
+    background: #f6f7f7;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    border: 1px solid #dcdcde;
+    align-items: center;
+}
+
+.download-row input {
+    width: 100%;
+}
+
+.publish-actions {
+    margin-top: 20px;
+    text-align: right;
+    border-top: 1px solid #f0f0f1;
+    padding-top: 20px;
+}
+
+.button-hero {
+    width: 100%;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .publisher-grid {
+        grid-template-columns: 1fr;
+    }
+}

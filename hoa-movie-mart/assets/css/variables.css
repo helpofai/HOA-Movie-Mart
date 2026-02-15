@@ -1,0 +1,49 @@
+:root {
+    /* --- Colors: Brand & Accents --- */
+    --primary-color: #e50914;
+    --primary-light: #ff1f2a;
+    --primary-dark: #b20710;
+    --primary-gradient: linear-gradient(135deg, #e50914 0%, #b20710 100%);
+    --secondary-gradient: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+    
+    /* --- Colors: Backgrounds --- */
+    --bg-dark: #0f1014;
+    --bg-darker: #050507;
+    --bg-gradient: linear-gradient(to bottom, #0f1014, #1a1a1e);
+    --bg-surface: rgba(255, 255, 255, 0.03);
+    --bg-surface-hover: rgba(255, 255, 255, 0.07);
+    
+    /* --- Colors: Typography --- */
+    --text-main: #ffffff;
+    --text-muted: #a1a1aa;
+    --text-dim: #71717a;
+
+    /* --- Effects: Glassmorphism --- */
+    --glass-bg: rgba(15, 16, 20, 0.85);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+    --glass-blur: blur(20px);
+    --glass-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+
+    /* --- Effects: Shadows & Glows --- */
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.3);
+    --shadow-md: 0 8px 16px rgba(0,0,0,0.4);
+    --shadow-lg: 0 16px 32px rgba(0,0,0,0.5);
+    --glow-primary: 0 0 20px rgba(229, 9, 20, 0.3);
+
+    /* --- Layout: Spacing & Radius --- */
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 24px;
+    --container-width: 1440px;
+    --header-height: 80px;
+    --header-height-scrolled: 70px;
+
+    /* --- Transitions --- */
+    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* --- Typography: Movie Themed --- */
+    --font-heading: 'Bebas Neue', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
