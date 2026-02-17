@@ -12,6 +12,7 @@ jQuery(document).ready(function($) {
             else if (title.indexOf('Social') !== -1) currentSectionId = 'social';
             else if (title.indexOf('API') !== -1) currentSectionId = 'api-management';
             else if (title.indexOf('Footer') !== -1) currentSectionId = 'footer-settings';
+            else if (title.indexOf('3-Step Bridge') !== -1) currentSectionId = 'bridge-ads';
             else if (title.indexOf('Legal') !== -1) currentSectionId = 'legal';
             else if (title.indexOf('Advanced') !== -1) currentSectionId = 'advanced';
             else if (title.indexOf('Documentation') !== -1) currentSectionId = 'documentation';

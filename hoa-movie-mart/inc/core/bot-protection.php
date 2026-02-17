@@ -121,8 +121,9 @@ function hoa_render_tv_seasons_content( $post_id ) {
             echo '</div>';
             
             if ( ! empty( $episode['link'] ) ) {
+                $bridge_url = function_exists('hoa_get_bridge_url') ? hoa_get_bridge_url($episode['link'], $post_id) : $episode['link'];
                 echo '<div class="ep-right-actions" style="display:flex; gap:10px; align-items:center;">';
-                echo '<a href="' . esc_url( $episode['link'] ) . '" class="ep-download-btn" target="_blank"><i class="fas fa-download"></i> <span class="hide-mobile">Download</span></a>';
+                echo '<a href="' . esc_url( $bridge_url ) . '" class="ep-download-btn" target="_blank"><i class="fas fa-download"></i> <span class="hide-mobile">Download</span></a>';
                 echo '<button class="btn-report-dead small" data-post-id="' . $post_id . '" data-link="S' . $season['number'] . 'E' . $episode['number'] . '" title="Report Broken"><i class="fas fa-flag"></i></button>';
                 echo '</div>';
             } else {
@@ -195,7 +196,8 @@ function hoa_render_download_table_content( $post_id ) {
 
                     echo '<td class="table-actions">';
 
-                    echo '<a href="' . esc_url($link['url']) . '" class="table-btn-download">Download <i class="fas fa-arrow-down"></i></a>';
+                    $bridge_url = function_exists('hoa_get_bridge_url') ? hoa_get_bridge_url($link['url'], $post_id) : $link['url'];
+                    echo '<a href="' . esc_url($bridge_url) . '" class="table-btn-download">Download <i class="fas fa-arrow-down"></i></a>';
 
                     echo '<button class="btn-report-dead" data-post-id="' . $post_id . '" data-link="' . esc_attr($link['label'] . ' ' . $quality) . '" title="Report Broken Link"><i class="fas fa-flag"></i></button>';
 

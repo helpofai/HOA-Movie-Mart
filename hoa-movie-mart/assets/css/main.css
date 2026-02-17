@@ -3,6 +3,10 @@
  * Integrates Variables and Components
  */
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body {
     background-color: var(--bg-dark);
     color: var(--text-main);
@@ -13,6 +17,7 @@ body {
     min-height: 100vh;
     background-image: var(--bg-gradient);
     background-attachment: fixed;
+    overflow-x: hidden;
 }
 
 /* Remove body background image on single movie pages to show the backdrop */
@@ -306,12 +311,13 @@ a:hover {
     justify-content: space-between;
     align-items: center;
     gap: 30px;
+    flex-wrap: wrap; /* Allow wrapping if space is tight */
 }
 
-.filter-group { display: flex; align-items: center; gap: 20px; }
+.filter-group { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
 .filter-label { font-weight: 700; color: var(--text-dim); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
 
-.filter-pills { display: flex; gap: 10px; }
+.filter-pills { display: flex; gap: 10px; flex-wrap: wrap; }
 .filter-pill {
     padding: 8px 20px;
     background: rgba(255,255,255,0.03);
@@ -330,9 +336,22 @@ a:hover {
     box-shadow: var(--glow-primary);
 }
 
+.filter-search-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    min-width: 250px;
+}
+
 .filter-search-input {
     position: relative;
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
+    transition: max-width var(--transition-base);
+}
+
+.filter-search-input:focus-within {
+    max-width: 400px;
 }
 
 .filter-search-input input {
@@ -346,7 +365,10 @@ a:hover {
     transition: all var(--transition-fast);
 }
 
-.filter-search-input input:focus { border-color: var(--primary-color); width: 350px; }
+.filter-search-input input:focus { 
+    border-color: var(--primary-color); 
+    background: rgba(0,0,0,0.4);
+}
 .filter-search-input button {
     position: absolute; right: 15px; top: 50%; transform: translateY(-50%);
     background: none; border: none; color: var(--text-muted); cursor: pointer;
@@ -965,67 +987,4 @@ a:hover {
 .ep-date {
     font-size: 0.75rem;
     color: var(--text-dim);
-}
-
-/* --- App-Style Bottom Hub (Mobile Only) --- */
-.hoa-mobile-bottom-hub {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 65px;
-    background: rgba(15, 16, 20, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    display: none; /* Hidden on desktop */
-    justify-content: space-around;
-    align-items: center;
-    z-index: 2000;
-    padding-bottom: env(safe-area-inset-bottom);
-    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
-}
-
-@media (max-width: 991px) {
-    .hoa-mobile-bottom-hub {
-        display: flex;
-    }
-    
-    /* Add padding to the bottom of the page to prevent content overlap */
-    .site-footer {
-        padding-bottom: 90px !important;
-    }
-}
-
-.hub-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-    color: var(--text-dim);
-    text-decoration: none;
-    flex: 1;
-    transition: all 0.3s ease;
-    height: 100%;
-}
-
-.hub-item i {
-    font-size: 1.2rem;
-}
-
-.hub-item span {
-    font-size: 0.65rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.hub-item.active {
-    color: var(--primary-color);
-}
-
-.hub-item.active i {
-    transform: translateY(-2px);
-    filter: drop-shadow(0 0 8px rgba(229, 9, 20, 0.4));
 }

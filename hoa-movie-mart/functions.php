@@ -43,6 +43,11 @@ require HOA_THEME_DIR . '/inc/core/request-handler.php';
 require HOA_THEME_DIR . '/inc/core/report-handler.php';
 
 /**
+ * Download Bridge Handler
+ */
+require HOA_THEME_DIR . '/inc/core/bridge-handler.php';
+
+/**
  * SEO Schema
  */
 require HOA_THEME_DIR . '/inc/core/seo-schema.php';

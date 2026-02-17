@@ -258,6 +258,68 @@ function helpofai_settings_init() {
         array( 'label_for' => 'turnstile_secret_key', 'class' => 'regular-text' )
     );
 
+    // Bridge Page Section
+    add_settings_section(
+        'hoa_bridge_section',
+        __( '3-Step Bridge Settings', 'helpofai' ),
+        'helpofai_section_callback',
+        'hoa_movie_mart'
+    );
+
+    add_settings_field(
+        'bridge_timer_1',
+        __( 'Step 1 Timer (Seconds)', 'helpofai' ),
+        'helpofai_render_text_field',
+        'hoa_movie_mart',
+        'hoa_bridge_section',
+        array( 'label_for' => 'bridge_timer_1', 'class' => 'small-text' )
+    );
+
+    add_settings_field(
+        'bridge_timer_2',
+        __( 'Step 2 Timer (Seconds)', 'helpofai' ),
+        'helpofai_render_text_field',
+        'hoa_movie_mart',
+        'hoa_bridge_section',
+        array( 'label_for' => 'bridge_timer_2', 'class' => 'small-text' )
+    );
+
+    add_settings_field(
+        'bridge_ad_top',
+        __( 'Top Ad Slot (Header)', 'helpofai' ),
+        'helpofai_render_textarea_field',
+        'hoa_movie_mart',
+        'hoa_bridge_section',
+        array( 'label_for' => 'bridge_ad_top' )
+    );
+
+    add_settings_field(
+        'bridge_ad_mid',
+        __( 'Middle Ad Slot (Near Timer)', 'helpofai' ),
+        'helpofai_render_textarea_field',
+        'hoa_movie_mart',
+        'hoa_bridge_section',
+        array( 'label_for' => 'bridge_ad_mid' )
+    );
+
+    add_settings_field(
+        'bridge_ad_bottom',
+        __( 'Bottom Ad Slot (Footer)', 'helpofai' ),
+        'helpofai_render_textarea_field',
+        'hoa_movie_mart',
+        'hoa_bridge_section',
+        array( 'label_for' => 'bridge_ad_bottom' )
+    );
+
+    add_settings_field(
+        'bridge_ad_sidebar',
+        __( 'Sidebar Ad Slot', 'helpofai' ),
+        'helpofai_render_textarea_field',
+        'hoa_movie_mart',
+        'hoa_bridge_section',
+        array( 'label_for' => 'bridge_ad_sidebar' )
+    );
+
     // Documentation Section
     add_settings_section(
         'hoa_docs_section',
@@ -318,8 +380,27 @@ function helpofai_render_docs_inside_settings() {
 
         <h3>4. Movie Requests</h3>
         <p>Users can request content via the <code>/request/</code> page. You can manage these requests in the <strong>Requests</strong> dashboard menu.</p>
+
+        <hr>
+        <h3>5. 3-Step Download Bridge & Ads</h3>
+        <p>This system protects your links from copyright bots and maximizes ad revenue through a multi-step verification process.</p>
+        <strong>Setup Instructions:</strong>
+        <ol>
+            <li><strong>Create Page:</strong> Go to <strong>Pages -> Add New</strong>. Title it "Secure Download" and set the template to <strong>Download Bridge</strong>.</li>
+            <li><strong>Configure Timers:</strong> Go to the <strong>Bridge Ads</strong> tab in these settings to set durations for each step (e.g., 15 and 10 seconds).</li>
+            <li><strong>Add Ad Codes:</strong> Paste your advertisement scripts into the 4 available slots:
+                <ul>
+                    <li><em>Top Slot:</em> Shows at the very top of the bridge.</li>
+                    <li><em>Middle Slot:</em> Placed directly above the countdown timer for maximum visibility.</li>
+                    <li><em>Bottom Slot:</em> Shows at the footer of the bridge.</li>
+                    <li><em>Sidebar Slot:</em> Shows on the right side (Desktop only).</li>
+                </ul>
+            </li>
+        </ol>
+        <p><em>Security Note: The system uses One-Time Tokens (OTT). Once a user reaches Step 3 and clicks download, the session key is destroyed to prevent link sharing.</em></p>
         
-        <h3>5. Manual Page Setup</h3>
+        <hr>
+        <h3>6. Manual Page Setup</h3>
         <p>To ensure all features work correctly, you should manually create the following pages in <strong>Pages -> Add New</strong>:</p>
         <ul>
             <li><strong>Homepage:</strong> Create a page (e.g., "Home"). The theme will automatically use the <code>front-page.php</code> template for the site root.</li>
@@ -409,6 +490,7 @@ function helpofai_options_page() {
                     <li><a href="#social"><i class="dashicons dashicons-share"></i> Social Media</a></li>
                     <li><a href="#api-management"><i class="dashicons dashicons-rest-api"></i> API Management</a></li>
                     <li><a href="#footer-settings"><i class="dashicons dashicons-editor-insertmore"></i> Footer</a></li>
+                    <li><a href="#bridge-ads"><i class="dashicons dashicons-megaphone"></i> Bridge Ads</a></li>
                     <li><a href="#legal"><i class="dashicons dashicons-shield"></i> Legal</a></li>
                     <li><a href="#advanced"><i class="dashicons dashicons-admin-generic"></i> Advanced</a></li>
                     <li><a href="#documentation"><i class="dashicons dashicons-book"></i> Documentation</a></li>

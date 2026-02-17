@@ -130,26 +130,6 @@
         </div>
     </div>
 
-    <!-- Mobile Bottom Navigation -->
-    <div class="mobile-bottom-nav">
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="nav-item <?php if(is_front_page()) echo 'active'; ?>">
-            <i class="fas fa-home"></i>
-            <span>Home</span>
-        </a>
-        <a href="<?php echo get_post_type_archive_link('movie'); ?>" class="nav-item <?php if(is_post_type_archive('movie')) echo 'active'; ?>">
-            <i class="fas fa-film"></i>
-            <span>Movies</span>
-        </a>
-        <a href="<?php echo add_query_arg('orderby', 'popular', home_url('/')); ?>" class="nav-item">
-            <i class="fas fa-fire"></i>
-            <span>Hot</span>
-        </a>
-        <a href="<?php echo esc_url( home_url('/request/') ); ?>" class="nav-item">
-            <i class="fas fa-paper-plane"></i>
-            <span>Request</span>
-        </a>
-    </div>
-
     <!-- Back to Top -->
     <button id="back-to-top" class="back-to-top" aria-label="Back to Top">
         <i class="fas fa-chevron-up"></i>
